@@ -1,7 +1,7 @@
 CR_NAME		?= ghcr.io
 CR_USER		?= takekazuomi
-IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps05
-TAG		?= 0.0.2
+IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps07
+TAG		?= latest
 
 help:		## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)
@@ -36,5 +36,3 @@ ghcr-login:	## login github container registry
 login:		## login docker shell
 	docker run -it --rm -u=$$(id -u):$$(id -g) -v $(PWD):/workspace $(IMAGE_NAME):latest /bin/sh
 
-curl:		## test from curl
-	curl -v -X GET -d "1223" http://localhost:8088/dump

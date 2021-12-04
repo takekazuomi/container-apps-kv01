@@ -1,7 +1,7 @@
 CR_NAME		?= ghcr.io
 CR_USER		?= takekazuomi
-IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps05
-TAG		?= 0.0.2
+IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps07
+TAG		?= latest
 
 help:		## Show this help.
 	@sed -ne '/@sed/!s/## //p' $(MAKEFILE_LIST)

@@ -25,7 +25,7 @@ func setupRouter() *gin.Engine {
 
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{
-			"message": "ok",
+			"message": "ok ok",
 		})
 	})
 	r.GET("/dump", requestDump)

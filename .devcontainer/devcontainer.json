@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.205.0/containers/dapr-dotnet
 {
-	"name": "container-apps05",
+	"name": "container-apps07",
   "build": {
 		"dockerfile": "Dockerfile",
 		"args": {
