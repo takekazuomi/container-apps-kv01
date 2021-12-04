@@ -1,0 +1,62 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.205.0/containers/dapr-dotnet
+{
+	"name": "container-apps05",
+  "build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"INSTALL_AZURE_CLI": "true"
+		}
+	},
+	"runArgs": ["--init", "--privileged"],
+	"mounts": ["source=dind-var-lib-docker,target=/var/lib/docker,type=volume"],
+	"overrideCommand": false,
+
+	// Use this environment variable if you need to bind mount your local source code into a new container.
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+		"PATH": "/home/vscode/.dapr/bin/:/home/vscode/.dotnet/tools:$PATH${containerEnv:PATH}"
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.defaultProfile.linux":"zsh",
+    "gopls": {
+			"experimentalWorkspaceModule": true
+		},
+		"go.coverOnSave": true,
+	    "go.coverageDecorator": {
+        	"type": "gutter",
+	        "coveredHighlightColor": "rgba(64,128,128,0.5)",
+        	"uncoveredHighlightColor": "rgba(128,64,64,0.25)",
+	        "coveredGutterStyle": "blockgreen",
+        	"uncoveredGutterStyle": "blockred"
+	    },
+    	"go.coverOnSingleTest": true
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"ms-azuretools.vscode-dapr",
+		"ms-azuretools.vscode-docker",
+		"golang.go",
+		"ms-azuretools.vscode-bicep",
+		"rubymaniac.vscode-direnv",
+		"davidanson.vscode-markdownlint",
+		"timonwong.shellcheck",
+		"editorconfig.editorconfig"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Ensure Dapr is running on opening the container
+	// "postCreateCommand": "dapr uninstall --all && dapr init && sed -i 's/statestore/orders/g' ${HOME}/.dapr/components/statestore.yaml",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+	"features": {
+		"git": "latest",
+		"github-cli": "latest"
+	}
+}
