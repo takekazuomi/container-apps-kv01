@@ -34,7 +34,7 @@ ARG USERNAME=vscode
 # own dependencies. A user of "automatic" attempts to reuse an user ID if one already exists.
 COPY library-scripts/docker-in-docker-debian.sh /tmp/library-scripts/
 RUN apt-get update \
-    && apt-get install direnv -y \
+    && apt-get install direnv gettext -y \
     && echo 'eval "$(direnv hook zsh)"' >> /home/vscode/.zshrc \
 # Use Docker script from script library to set things up
     && /bin/bash /tmp/library-scripts/docker-in-docker-debian.sh "${ENABLE_NONROOT_DOCKER}" "${USERNAME}" "${USE_MOBY}" "${DOCKER_VERSION}"

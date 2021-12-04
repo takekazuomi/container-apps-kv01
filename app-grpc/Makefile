@@ -1,6 +1,6 @@
 CR_NAME		?= ghcr.io
 CR_USER		?= takekazuomi
-IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps07
+IMAGE_NAME	?= $(CR_NAME)/$(CR_USER)/container-apps-kv01
 TAG		?= latest
 
 help:		## Show this help.

@@ -6,7 +6,7 @@ CONTAINERAPPS_NAME			= my-containerapps
 KEYVAULT_NAME_PREFIX			= kvcapp01
 CR_NAME					?= ghcr.io
 CR_USER					?= takekazuomi
-IMAGE_NAME				?= $(CR_NAME)/$(CR_USER)/container-apps07
+IMAGE_NAME				?= $(CR_NAME)/$(CR_USER)/container-apps-kv01
 APP_FQDN				?= $(shell az containerapp show \
 						--resource-group $(RESOURCE_GROUP) \
 						--name $(CONTAINERAPPS_NAME) \
